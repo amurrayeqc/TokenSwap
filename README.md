@@ -26,7 +26,7 @@ TokenSwap is aimed at developers who need a straightforward, dependable solution
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/harutosati/TokenSwap.git`
+1. Clone the repository: `git clone https://github.com/centxyz/TokenSwap.git`
 2. `cd TokenSwap`
 3. Install in editable mode: `pip install -e .`
 
@@ -43,4 +43,4 @@ Contributions are welcome. Open an issue for bugs or feature requests, or submit
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](https://github.com/harutosati/TokenSwap/blob/main/LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/centxyz/TokenSwap/blob/main/LICENSE) file for details.
