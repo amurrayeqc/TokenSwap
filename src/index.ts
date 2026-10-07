@@ -4,9 +4,9 @@
  */
 
 import { TokenSwap } from './tokenswap';
-import minimist from 'minimist';
+import minimist, { ParsedArgs } from 'minimist';
 
-interface Args {
+interface Args extends ParsedArgs {
     verbose?: boolean;
     input?: string;
     output?: string;
