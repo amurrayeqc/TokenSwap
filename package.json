@@ -1,5 +1,5 @@
 {
-  "name": "tokenswap",
+  "name": "routequarry",
   "version": "2.0.0",
   "description": "Uniswap V2 route optimizer and unsigned swap transaction builder",
   "main": "dist/index.js",

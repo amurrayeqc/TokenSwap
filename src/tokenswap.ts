@@ -86,7 +86,7 @@ function normalizePools(pools: PoolSnapshot[]): Edge[] {
     return edges;
 }
 
-export class TokenSwap {
+export class RouteQuarry {
     quote(request: QuoteRequest): SwapQuote {
         const tokenIn = address(request.tokenIn, 'tokenIn'); const tokenOut = address(request.tokenOut, 'tokenOut');
         if (tokenIn === tokenOut) throw new Error('tokenIn and tokenOut must be different');
@@ -125,3 +125,5 @@ export class TokenSwap {
         return { to, data: `0x38ed1739${head}${tail}`, value: '0x0' };
     }
 }
+
+export const TokenSwap = RouteQuarry;
