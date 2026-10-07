@@ -43,3 +43,9 @@ Tests cover constant-product math, route optimization, reverse pairs, malformed 
 ## License
 
 MIT © cent
+
+## Current limitations
+
+- Quotes are only as current and accurate as the supplied pool snapshots.
+- Routes are limited to Uniswap-V2-style constant-product pools and four hops.
+- The tool does not sign, broadcast, or protect against state changes between quoting and execution.
