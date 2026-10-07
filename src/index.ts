@@ -1,15 +1,15 @@
 import { promises as fs } from 'node:fs';
 import minimist, { ParsedArgs } from 'minimist';
-import { QuoteRequest, RouteQuarry } from './tokenswap';
+import { AMMPathfinder, QuoteRequest } from './tokenswap';
 
 interface Args extends ParsedArgs { input?: string; output?: string; router?: string; recipient?: string; deadline?: number; }
 
 export async function main(argv = process.argv.slice(2)): Promise<number> {
     try {
         const args = minimist<Args>(argv, { string: ['input', 'output', 'router', 'recipient'], alias: { i: 'input', o: 'output' } });
-        if (!args.input) throw new Error('Usage: routequarry --input quote.json [--router 0x... --recipient 0x... --deadline UNIX] [--output result.json]');
+        if (!args.input) throw new Error('Usage: ammpathfinder --input quote.json [--router 0x... --recipient 0x... --deadline UNIX] [--output result.json]');
         const request = JSON.parse(await fs.readFile(args.input, 'utf8')) as QuoteRequest;
-        const engine = new RouteQuarry(); const quote = engine.quote(request);
+        const engine = new AMMPathfinder(); const quote = engine.quote(request);
         const transaction = args.router || args.recipient || args.deadline ? engine.buildTransaction(quote, String(args.router || ''), String(args.recipient || ''), Number(args.deadline)) : undefined;
         const result = { quote, transaction }; const rendered = `${JSON.stringify(result, null, 2)}\n`;
         if (args.output) await fs.writeFile(args.output, rendered, 'utf8'); else process.stdout.write(rendered);

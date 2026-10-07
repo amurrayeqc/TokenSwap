@@ -1,14 +1,14 @@
-# RouteQuarry
+# AMMPathfinder
 
-RouteQuarry is a deterministic Uniswap-V2-compatible swap planner. It evaluates supplied constant-product pool snapshots, searches routes of up to four hops, selects the highest-output path, reports fees and price impact, applies a slippage floor, and can encode an unsigned `swapExactTokensForTokens` router transaction.
+AMMPathfinder is a deterministic Uniswap-V2-compatible swap planner. It evaluates supplied constant-product pool snapshots, searches routes of up to four hops, selects the highest-output path, reports fees and price impact, applies a slippage floor, and can encode an unsigned `swapExactTokensForTokens` router transaction.
 
 It never holds private keys, signs, broadcasts, or claims that a snapshot is current. Obtain trusted pool reserves at the intended block before relying on a quote.
 
 ## Install
 
 ```bash
-git clone https://github.com/centxyz/RouteQuarry.git
-cd RouteQuarry
+git clone https://github.com/centxyz/AMMPathfinder.git
+cd AMMPathfinder
 npm install
 npm run build
 ```
